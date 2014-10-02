@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2578D6BD-8D65-4E16-A7A9-846E70E30931}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LocalizedNugetPackage</RootNamespace>
+    <AssemblyName>LocalizedNugetPackage</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SampleResource.resx" />
+    <EmbeddedResource Include="SampleResource.zh-Hans.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LocalizedNugetPackage.3.0.nuspec" />
+    <None Include="LocalizedNugetPackage.2.0.nuspec" />
+    <None Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LocalizedNugetPackage.zh-Hans.nuspec" />
+    <None Include="LocalizedNugetPackage.nuspec" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <PropertyGroup>
+      <NugetExePath>$(MSBuildThisFileDirectory)..\..\..\.nuget\nuget.exe</NugetExePath>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackagesToBuild Include="LocalizedNugetPackage.nuspec" />
+      <PackagesToBuild Include="LocalizedNugetPackage.2.0.nuspec" />
+      <PackagesToBuild Include="LocalizedNugetPackage.3.0.nuspec" />
+      <PackagesToBuild Include="LocalizedNugetPackage.zh-Hans.nuspec" />
+    </ItemGroup>
+    <Message Text="Building LocalizedNugetPackage .nupkg files" />
+    <Exec Command="&quot;$(NuGetExePath)&quot; pack &quot;%(PackagesToBuild.Identity)&quot;" LogStandardErrorAsError="true" />
+  </Target>
+</Project>

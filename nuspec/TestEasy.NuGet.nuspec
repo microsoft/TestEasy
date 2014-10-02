@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TestEasy.NuGet</id>
+    <version>[version]</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://github.com/Microsoft/TestEasy</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NuGet API wrappers simplifying nuget package management in websites at runtime</description>
+    <releaseNotes>Release of version TestEasy.NuGet [version]</releaseNotes>
+    <copyright>Copyright 2014 Microsoft Corporation. All rights reserved</copyright>
+    <tags>ASP.NET MVC WebPages Test Automation Framework Testcase Testing WebSite Azure Cloud Services Selenium IIS IISExpress Nuget package</tags>
+    
+    <dependencies>
+      <dependency id="NuGet.Core" version="[2.8.1]" />
+      <dependency id="TestEasy.Core" version="[version]" />
+    </dependencies>
+  </metadata>
+  
+  <files>
+    <file src="..\raw\TestEasy.NuGet.dll" target="lib\TestEasy.NuGet.dll" />
+  </files>
+</package>

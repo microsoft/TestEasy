@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TestEasy.Core</id>
+    <version>[version]</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://github.com/Microsoft/TestEasy</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Common configuration, helper and abstraction classes used by other TestEasy packages</description>
+    <releaseNotes>Release of version TestEasy.Core [version]</releaseNotes>
+    <copyright>Copyright 2014 Microsoft Corporation. All rights reserved</copyright>
+    <tags>ASP.NET MVC WebPages Test Automation Framework Testcase Testing WebSite Azure Cloud Services Selenium IIS IISExpress Nuget package</tags>
+  </metadata>
+  
+  <files>
+    <file src="..\raw\TestEasy.Core.dll" target="lib\TestEasy.Core.dll" />
+  </files>
+</package>

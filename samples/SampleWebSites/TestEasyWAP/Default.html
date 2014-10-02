@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function myButtonClick() {
+            document.getElementById("myInput").value = "[Clicked!]";
+        }
+    </script>
+</head>
+    <body>
+        <form>
+            <label id="myLabel">[This is my label]</label>
+            <input type="text" id="myInput"/>
+            <input type="submit" id="myButton" value="myButton" onclick="myButtonClick()" />
+        </form>
+    </body>
+</html>

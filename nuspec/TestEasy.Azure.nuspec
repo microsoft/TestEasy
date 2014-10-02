@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TestEasy.Azure</id>
+    <version>[version]</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://github.com/Microsoft/TestEasy</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Facade consolidating Azure APIs (REST, managed etc) into simple classes, providing a single entry point for all Azure scenarios</description>
+    <releaseNotes>Release of version TestEasy.Azure [version]</releaseNotes>
+    <copyright>Copyright 2014 Microsoft Corporation. All rights reserved</copyright>
+    <tags>ASP.NET MVC WebPages Test Automation Framework Testcase Testing WebSite Azure Cloud Services Selenium IIS IISExpress Nuget package</tags>
+    
+    <dependencies>
+      <dependency id="Microsoft.Web.Deployment" version="[3.5.0]" />
+      <dependency id="Microsoft.WindowsAzure.Management.Libraries" version="[1.0.1]" />
+      <dependency id="WindowsAzure.Storage" version="[2.0.6.1]" />
+      <dependency id="TestEasy.Core" version="[version]" />      
+    </dependencies>
+  </metadata>
+  
+  <files>    
+    <file src="..\raw\TestEasy.Azure.dll" target="lib\TestEasy.Azure.dll" />
+    <file src="..\raw\TestEasy.Azure.dll.config" target="lib\TestEasy.Azure.dll.config" />
+  </files>
+</package>

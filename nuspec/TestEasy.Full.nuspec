@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TestEasy.Full</id>
+    <version>[version]</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://github.com/Microsoft/TestEasy</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Brings all web related TestEasy packages to the project: WebServers, Azure, WebBrowser, NuGet helpers</description>
+    <releaseNotes>Release of version TestEasy.Full [version]</releaseNotes>
+    <copyright>Copyright 2014 Microsoft Corporation. All rights reserved</copyright>
+    <tags>ASP.NET MVC WebPages Test Automation Framework Testcase Testing WebSite Azure Cloud Services Selenium IIS IISExpress Nuget package</tags>
+    
+    <dependencies>
+      <dependency id="TestEasy.Azure" version="[version]" />
+      <dependency id="TestEasy.Core" version="[version]" />
+      <dependency id="TestEasy.NuGet" version="[version]" />
+      <dependency id="TestEasy.WebBrowser" version="[version]" />
+      <dependency id="TestEasy.WebServer" version="[version]" />
+    </dependencies>
+  </metadata>
+</package>

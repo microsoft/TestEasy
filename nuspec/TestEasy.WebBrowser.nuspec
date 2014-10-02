@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TestEasy.WebBrowser</id>
+    <version>[version]</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://github.com/Microsoft/TestEasy</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Wrappers and abstractions around Selenium and Selenium Grid functionality supporting all major browsers interactions</description>
+    <releaseNotes>Release of version TestEasy.WebBrowser [version]</releaseNotes>
+    <copyright>Copyright 2014 Microsoft Corporation. All rights reserved</copyright>
+    <tags>ASP.NET MVC WebPages Test Automation Framework Testcase Testing WebSite Azure Cloud Services Selenium IIS IISExpress Nuget package</tags>
+    
+    <dependencies>
+      <dependency id="Selenium.Support" version="[2.42.0]" />
+      <dependency id="Selenium.WebDriver" version="[2.42.0]" />
+      <dependency id="TestEasy.Core" version="[version]" />      
+    </dependencies>
+  </metadata>
+  
+  <files>
+    <file src="..\raw\TestEasy.WebBrowser.dll" target="lib\TestEasy.WebBrowser.dll" />
+  </files>
+</package>

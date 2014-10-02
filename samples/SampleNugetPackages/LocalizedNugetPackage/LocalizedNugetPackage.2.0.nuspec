@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>LocalizedNugetPackage</id>
+    <version>2.0.0</version>
+    <authors>jamlew</authors>
+    <owners>jamlew</owners>
+    <licenseUrl>http://aaptes</licenseUrl>
+    <projectUrl>http://aaptes</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Sample Nuget package for TestEasy BVTs</description>
+    <releaseNotes>Release of version LocalizedNugetPackage 2.0</releaseNotes>
+    <copyright>Copyright 2012 Outercurve Foundation</copyright>
+    <language>en-US</language>
+    <tags></tags>
+  </metadata>
+  
+  <files>
+    <file src="bin\Debug\LocalizedNugetPackage.dll" target="lib\LocalizedNugetPackage.dll" />
+  </files>
+</package>

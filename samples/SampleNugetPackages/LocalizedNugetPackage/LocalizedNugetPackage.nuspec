@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>LocalizedNugetPackage</id>
+    <version>1.0.0</version>
+    <authors>test</authors>
+    <owners>test</owners>
+    <licenseUrl>http://testurl</licenseUrl>
+    <projectUrl>http://testurl</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Sample Nuget package for TestEasy BVTs</description>
+    <releaseNotes>Release of version LocalizedNugetPackage 1.0</releaseNotes>
+    <copyright>Copyright 2014 Microsoft Corporation. All rights reserved</copyright>
+    <language>en-US</language>
+    <tags></tags>
+  </metadata>
+  
+  <files>
+    <file src="bin\Debug\LocalizedNugetPackage.dll" target="lib\LocalizedNugetPackage.dll" />
+  </files>
+</package>

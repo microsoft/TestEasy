@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>LocalizedNugetPackage.zh-Hans</id>
+    <version>1.0.0</version>
+    <authors>jamlew</authors>
+    <owners>jamlew</owners>
+    <licenseUrl>http://aaptes</licenseUrl>
+    <projectUrl>http://aaptes</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Sample Nuget package for TestEasy BVTs</description>
+    <releaseNotes>Release of version LocalizedNugetPackage 1.0</releaseNotes>
+    <copyright>Copyright 2012 Outercurve Foundation</copyright>
+    <tags></tags>
+    <language>zh-Hans</language>
+    <dependencies>
+      <dependency id="LocalizedNugetPackage" version="[1.0.0]" />
+    </dependencies>
+  </metadata>
+  
+  <files>
+    <file src="bin\Debug\zh-Hans\LocalizedNugetPackage.resources.dll" target="lib\zh-Hans\LocalizedNugetPackage.resources.dll" />
+  </files>
+</package>

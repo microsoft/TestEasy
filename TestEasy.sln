@@ -1,0 +1,236 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3A56484A-5049-47A1-8553-3DE92A0D80DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.WebServer", "src\TestEasy.WebServer\TestEasy.WebServer.csproj", "{01E892F7-CFCC-4528-BEBB-32DC1F78676B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.WebBrowser", "src\TestEasy.WebBrowser\TestEasy.WebBrowser.csproj", "{F5072E32-6419-4BE6-8CB6-09B9F17F13D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.NuGet", "src\TestEasy.NuGet\TestEasy.NuGet.csproj", "{2379033A-DA5C-4B98-B05E-7B105D7F5F99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.Core", "src\TestEasy.Core\TestEasy.Core.csproj", "{FC70E9E8-3E8E-4DA9-8C01-F19B3B7624D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{414646C4-F5C0-4DFC-98AA-1E343F141CEF}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\nuget.exe = .nuget\nuget.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.Azure", "src\TestEasy.Azure\TestEasy.Azure.csproj", "{080357FF-BCD9-4FF0-95BC-993AD2678E4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3E46709B-562A-4EAC-9CEC-9626BE542C0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{66819FC7-67E2-427E-A680-1F2040638459}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleWebSites", "SampleWebSites", "{7767911F-8199-47FC-8299-AC342B0F8FD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasyWAP", "samples\SampleWebSites\TestEasyWAP\TestEasyWAP.csproj", "{F0AAD236-CB0E-4B99-ADEB-5692B3187E07}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TestEasyWebSite", "samples\SampleWebSites\TestEasyWebSite", "{64451AB9-4C20-4072-9CC4-897B68778BFD}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/TestEasyWebSite"
+		Debug.AspNetCompiler.PhysicalPath = "samples\SampleWebSites\TestEasyWebSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\TestEasyWebSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/TestEasyWebSite"
+		Release.AspNetCompiler.PhysicalPath = "samples\SampleWebSites\TestEasyWebSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\TestEasyWebSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "29950"
+		SlnRelativePath = "samples\SampleWebSites\TestEasyWebSite\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMSUnitTests", "samples\SampleMSUnitTests\SampleMSUnitTests.csproj", "{37894F18-AF58-4A6C-82E2-4DB0FDF7112C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2578D6BD-8D65-4E16-A7A9-846E70E30931} = {2578D6BD-8D65-4E16-A7A9-846E70E30931}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.Core.Test", "test\TestEasy.Core.Test\TestEasy.Core.Test.csproj", "{3BC362B6-D4C0-4EC2-8AAC-3F1CF7032591}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleNugetPackages", "SampleNugetPackages", "{A3E4DA51-C9E6-45BE-8781-EF8584F8EA64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizedNugetPackage", "samples\SampleNugetPackages\LocalizedNugetPackage\LocalizedNugetPackage.csproj", "{2578D6BD-8D65-4E16-A7A9-846E70E30931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.Nuget.Test", "test\TestEasy.Nuget.Test\TestEasy.Nuget.Test.csproj", "{599294DB-1F96-4E67-92D3-17E3D9B7BE02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{3D21C76D-77FF-4DD8-BBD7-4499C4CA21E3}"
+	ProjectSection(SolutionItems) = preProject
+		nuspec\TestEasy.Azure.nuspec = nuspec\TestEasy.Azure.nuspec
+		nuspec\TestEasy.Core.nuspec = nuspec\TestEasy.Core.nuspec
+		nuspec\TestEasy.Full.nuspec = nuspec\TestEasy.Full.nuspec
+		nuspec\TestEasy.NuGet.nuspec = nuspec\TestEasy.NuGet.nuspec
+		nuspec\TestEasy.WebBrowser.nuspec = nuspec\TestEasy.WebBrowser.nuspec
+		nuspec\TestEasy.WebServer.nuspec = nuspec\TestEasy.WebServer.nuspec
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.WebServer.Test", "test\TestEasy.WebServer.Test\TestEasy.WebServer.Test.csproj", "{716B7AA4-845D-40FA-9609-422C25CB0FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.Azure.Bvt", "test\TestEasy.Azure.Bvt\TestEasy.Azure.Bvt.csproj", "{943D81DA-270C-4223-A4CD-337B2B3799C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEasy.TestHelpers", "test\TestEasy.TestHelpers\TestEasy.TestHelpers.csproj", "{8B6AFD4B-4989-48EA-9DFE-9F6FF7C79392}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 15
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://vstfdevdiv:8080/devdiv2
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = src\\TestEasy.WebServer\\TestEasy.WebServer.csproj
+		SccProjectTopLevelParentUniqueName1 = TestEasy.sln
+		SccProjectName1 = src/TestEasy.WebServer
+		SccLocalPath1 = src\\TestEasy.WebServer
+		SccProjectUniqueName2 = src\\TestEasy.WebBrowser\\TestEasy.WebBrowser.csproj
+		SccProjectTopLevelParentUniqueName2 = TestEasy.sln
+		SccProjectName2 = src/TestEasy.WebBrowser
+		SccLocalPath2 = src\\TestEasy.WebBrowser
+		SccProjectUniqueName3 = src\\TestEasy.NuGet\\TestEasy.NuGet.csproj
+		SccProjectTopLevelParentUniqueName3 = TestEasy.sln
+		SccProjectName3 = src/TestEasy.NuGet
+		SccLocalPath3 = src\\TestEasy.NuGet
+		SccProjectUniqueName4 = src\\TestEasy.Core\\TestEasy.Core.csproj
+		SccProjectTopLevelParentUniqueName4 = TestEasy.sln
+		SccProjectName4 = src/TestEasy.Core
+		SccLocalPath4 = src\\TestEasy.Core
+		SccProjectUniqueName5 = src\\TestEasy.Azure\\TestEasy.Azure.csproj
+		SccProjectTopLevelParentUniqueName5 = TestEasy.sln
+		SccProjectName5 = src/TestEasy.Azure
+		SccLocalPath5 = src\\TestEasy.Azure
+		SccProjectUniqueName6 = samples\\SampleWebSites\\TestEasyWAP\\TestEasyWAP.csproj
+		SccProjectTopLevelParentUniqueName6 = TestEasy.sln
+		SccProjectName6 = samples/SampleWebSites/TestEasyWAP
+		SccLocalPath6 = samples\\SampleWebSites\\TestEasyWAP
+		SccProjectUniqueName7 = samples\\SampleMSUnitTests\\SampleMSUnitTests.csproj
+		SccProjectTopLevelParentUniqueName7 = TestEasy.sln
+		SccProjectName7 = samples/SampleMSUnitTests
+		SccLocalPath7 = samples\\SampleMSUnitTests
+		SccProjectUniqueName8 = test\\TestEasy.Core.Test\\TestEasy.Core.Test.csproj
+		SccProjectTopLevelParentUniqueName8 = TestEasy.sln
+		SccProjectName8 = test/TestEasy.Core.Test
+		SccLocalPath8 = test\\TestEasy.Core.Test
+		SccProjectUniqueName9 = samples\\SampleNugetPackages\\LocalizedNugetPackage\\LocalizedNugetPackage.csproj
+		SccProjectTopLevelParentUniqueName9 = TestEasy.sln
+		SccProjectName9 = samples/SampleNugetPackages/LocalizedNugetPackage
+		SccLocalPath9 = samples\\SampleNugetPackages\\LocalizedNugetPackage
+		SccProjectUniqueName10 = test\\TestEasy.Nuget.Test\\TestEasy.Nuget.Test.csproj
+		SccProjectTopLevelParentUniqueName10 = TestEasy.sln
+		SccProjectName10 = test/TestEasy.Nuget.Test
+		SccLocalPath10 = test\\TestEasy.Nuget.Test
+		SccProjectUniqueName11 = test\\TestEasy.WebServer.Test\\TestEasy.WebServer.Test.csproj
+		SccProjectTopLevelParentUniqueName11 = TestEasy.sln
+		SccProjectName11 = test/TestEasy.WebServer.Test
+		SccLocalPath11 = test\\TestEasy.WebServer.Test
+		SccProjectUniqueName12 = test\\TestEasy.Azure.Bvt\\TestEasy.Azure.Bvt.csproj
+		SccProjectTopLevelParentUniqueName12 = TestEasy.sln
+		SccProjectName12 = test/TestEasy.Azure.Bvt
+		SccLocalPath12 = test\\TestEasy.Azure.Bvt
+		SccProjectUniqueName13 = test\\TestEasy.TestHelpers\\TestEasy.TestHelpers.csproj
+		SccProjectTopLevelParentUniqueName13 = TestEasy.sln
+		SccProjectName13 = test/TestEasy.TestHelpers
+		SccLocalPath13 = test\\TestEasy.TestHelpers
+		SccWebProject14 = true
+		SccProjectUniqueName14 = samples\\SampleWebSites\\TestEasyWebSite
+		SccProjectTopLevelParentUniqueName14 = TestEasy.sln
+		SccProjectName14 = samples/SampleWebSites/TestEasyWebSite
+		SccLocalPath14 = samples\\SampleWebSites\\TestEasyWebSite
+		SccProjectEnlistmentChoice14 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01E892F7-CFCC-4528-BEBB-32DC1F78676B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01E892F7-CFCC-4528-BEBB-32DC1F78676B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01E892F7-CFCC-4528-BEBB-32DC1F78676B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01E892F7-CFCC-4528-BEBB-32DC1F78676B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5072E32-6419-4BE6-8CB6-09B9F17F13D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5072E32-6419-4BE6-8CB6-09B9F17F13D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5072E32-6419-4BE6-8CB6-09B9F17F13D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5072E32-6419-4BE6-8CB6-09B9F17F13D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2379033A-DA5C-4B98-B05E-7B105D7F5F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2379033A-DA5C-4B98-B05E-7B105D7F5F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2379033A-DA5C-4B98-B05E-7B105D7F5F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2379033A-DA5C-4B98-B05E-7B105D7F5F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC70E9E8-3E8E-4DA9-8C01-F19B3B7624D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC70E9E8-3E8E-4DA9-8C01-F19B3B7624D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC70E9E8-3E8E-4DA9-8C01-F19B3B7624D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC70E9E8-3E8E-4DA9-8C01-F19B3B7624D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{080357FF-BCD9-4FF0-95BC-993AD2678E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{080357FF-BCD9-4FF0-95BC-993AD2678E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{080357FF-BCD9-4FF0-95BC-993AD2678E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{080357FF-BCD9-4FF0-95BC-993AD2678E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0AAD236-CB0E-4B99-ADEB-5692B3187E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0AAD236-CB0E-4B99-ADEB-5692B3187E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0AAD236-CB0E-4B99-ADEB-5692B3187E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0AAD236-CB0E-4B99-ADEB-5692B3187E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64451AB9-4C20-4072-9CC4-897B68778BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64451AB9-4C20-4072-9CC4-897B68778BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64451AB9-4C20-4072-9CC4-897B68778BFD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{64451AB9-4C20-4072-9CC4-897B68778BFD}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{37894F18-AF58-4A6C-82E2-4DB0FDF7112C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37894F18-AF58-4A6C-82E2-4DB0FDF7112C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37894F18-AF58-4A6C-82E2-4DB0FDF7112C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37894F18-AF58-4A6C-82E2-4DB0FDF7112C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC362B6-D4C0-4EC2-8AAC-3F1CF7032591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC362B6-D4C0-4EC2-8AAC-3F1CF7032591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC362B6-D4C0-4EC2-8AAC-3F1CF7032591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC362B6-D4C0-4EC2-8AAC-3F1CF7032591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2578D6BD-8D65-4E16-A7A9-846E70E30931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2578D6BD-8D65-4E16-A7A9-846E70E30931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2578D6BD-8D65-4E16-A7A9-846E70E30931}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{2578D6BD-8D65-4E16-A7A9-846E70E30931}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{599294DB-1F96-4E67-92D3-17E3D9B7BE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{599294DB-1F96-4E67-92D3-17E3D9B7BE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{599294DB-1F96-4E67-92D3-17E3D9B7BE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{599294DB-1F96-4E67-92D3-17E3D9B7BE02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716B7AA4-845D-40FA-9609-422C25CB0FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716B7AA4-845D-40FA-9609-422C25CB0FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716B7AA4-845D-40FA-9609-422C25CB0FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716B7AA4-845D-40FA-9609-422C25CB0FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{943D81DA-270C-4223-A4CD-337B2B3799C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{943D81DA-270C-4223-A4CD-337B2B3799C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{943D81DA-270C-4223-A4CD-337B2B3799C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{943D81DA-270C-4223-A4CD-337B2B3799C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B6AFD4B-4989-48EA-9DFE-9F6FF7C79392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B6AFD4B-4989-48EA-9DFE-9F6FF7C79392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B6AFD4B-4989-48EA-9DFE-9F6FF7C79392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B6AFD4B-4989-48EA-9DFE-9F6FF7C79392}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{01E892F7-CFCC-4528-BEBB-32DC1F78676B} = {3A56484A-5049-47A1-8553-3DE92A0D80DB}
+		{F5072E32-6419-4BE6-8CB6-09B9F17F13D4} = {3A56484A-5049-47A1-8553-3DE92A0D80DB}
+		{2379033A-DA5C-4B98-B05E-7B105D7F5F99} = {3A56484A-5049-47A1-8553-3DE92A0D80DB}
+		{FC70E9E8-3E8E-4DA9-8C01-F19B3B7624D5} = {3A56484A-5049-47A1-8553-3DE92A0D80DB}
+		{080357FF-BCD9-4FF0-95BC-993AD2678E4F} = {3A56484A-5049-47A1-8553-3DE92A0D80DB}
+		{7767911F-8199-47FC-8299-AC342B0F8FD1} = {66819FC7-67E2-427E-A680-1F2040638459}
+		{F0AAD236-CB0E-4B99-ADEB-5692B3187E07} = {7767911F-8199-47FC-8299-AC342B0F8FD1}
+		{64451AB9-4C20-4072-9CC4-897B68778BFD} = {7767911F-8199-47FC-8299-AC342B0F8FD1}
+		{37894F18-AF58-4A6C-82E2-4DB0FDF7112C} = {66819FC7-67E2-427E-A680-1F2040638459}
+		{3BC362B6-D4C0-4EC2-8AAC-3F1CF7032591} = {3E46709B-562A-4EAC-9CEC-9626BE542C0D}
+		{A3E4DA51-C9E6-45BE-8781-EF8584F8EA64} = {66819FC7-67E2-427E-A680-1F2040638459}
+		{2578D6BD-8D65-4E16-A7A9-846E70E30931} = {A3E4DA51-C9E6-45BE-8781-EF8584F8EA64}
+		{599294DB-1F96-4E67-92D3-17E3D9B7BE02} = {3E46709B-562A-4EAC-9CEC-9626BE542C0D}
+		{716B7AA4-845D-40FA-9609-422C25CB0FB7} = {3E46709B-562A-4EAC-9CEC-9626BE542C0D}
+		{943D81DA-270C-4223-A4CD-337B2B3799C5} = {3E46709B-562A-4EAC-9CEC-9626BE542C0D}
+		{8B6AFD4B-4989-48EA-9DFE-9F6FF7C79392} = {3E46709B-562A-4EAC-9CEC-9626BE542C0D}
+	EndGlobalSection
+EndGlobal
