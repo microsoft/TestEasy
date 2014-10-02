@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Go" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="$(Configuration) == ''">Debug</Configuration>
+    <ProjectRoot>$(MSBuildProjectDirectory)\..</ProjectRoot>
+    <ArtifactsDir>$(ProjectRoot)\artifacts\$(Configuration)</ArtifactsDir>
+    <TestResultsPath>$(ArtifactsDir)\TestResults</TestResultsPath>
+    <ArtifactsPackagesDir>$(ArtifactsDir)\packages</ArtifactsPackagesDir>
+    <ArtifactsRawDir>$(ProjectRoot)\artifacts\raw</ArtifactsRawDir>
+    <ArtifactsNuspecDir>$(ProjectRoot)\artifacts\nuspec</ArtifactsNuspecDir>
+    <NuGetToolsPath>$(ProjectRoot)\.nuget</NuGetToolsPath>
+    <NuGetExePath>$(NuGetToolsPath)\nuget.exe</NuGetExePath>
+    <ToolsPath>$(ProjectRoot)\tools\</ToolsPath>
+    <XunitPath>$(ToolsPath)xunit\</XunitPath>
+    <PrereleaseTagWithSeparator Condition="$(PrereleaseTag) != ''">-$(PrereleaseTag)</PrereleaseTagWithSeparator>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NewPackageVersion></NewPackageVersion>
+  </PropertyGroup>
+
+  <UsingTask AssemblyFile="$(XunitPath)xunit.runner.msbuild.dll"
+             TaskName="Xunit.Runner.MSBuild.xunit" />
+
+  <ItemGroup>
+    <TestProjects Include="$(ProjectRoot)\test\TestEasy.Core.Test\bin\$(Configuration)\TestEasy.Core.Test.dll" />
+    <TestProjects Include="$(ProjectRoot)\test\TestEasy.Nuget.Test\bin\$(Configuration)\TestEasy.Nuget.Test.dll" />
+    <TestProjects Include="$(ProjectRoot)\test\TestEasy.WebServer.Test\bin\$(Configuration)\TestEasy.WebServer.Test.dll" />
+  </ItemGroup>
+
+  <ItemGroup>      
+    <TestEasyNuspecSrc Include="$(ProjectRoot)\nuspec\TestEasy.Core.nuspec" />
+    <TestEasyNuspecSrc Include="$(ProjectRoot)\nuspec\TestEasy.NuGet.nuspec" />
+    <TestEasyNuspecSrc Include="$(ProjectRoot)\nuspec\TestEasy.Azure.nuspec" />
+    <TestEasyNuspecSrc Include="$(ProjectRoot)\nuspec\TestEasy.Full.nuspec" />
+    <TestEasyNuspecSrc Include="$(ProjectRoot)\nuspec\TestEasy.WebBrowser.nuspec" />
+    <TestEasyNuspecSrc Include="$(ProjectRoot)\nuspec\TestEasy.WebServer.nuspec" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TestEasyNuspecDest Include="$(ArtifactsNuspecDir)\TestEasy.Core.nuspec" />
+    <TestEasyNuspecDest Include="$(ArtifactsNuspecDir)\TestEasy.NuGet.nuspec" />
+    <TestEasyNuspecDest Include="$(ArtifactsNuspecDir)\TestEasy.Azure.nuspec" />
+    <TestEasyNuspecDest Include="$(ArtifactsNuspecDir)\TestEasy.Full.nuspec" />
+    <TestEasyNuspecDest Include="$(ArtifactsNuspecDir)\TestEasy.WebBrowser.nuspec" />
+    <TestEasyNuspecDest Include="$(ArtifactsNuspecDir)\TestEasy.WebServer.nuspec" />
+  </ItemGroup>
+  
+  <Target Name="Go" DependsOnTargets="PreparePackages;Build;RunUnitTests">
+    <!-- RunTests; -->    
+  </Target>
+
+  <Target Name="PreparePackages">
+    <Copy SourceFiles="%(TestEasyNuspecSrc.Identity)" DestinationFolder="$(ArtifactsNuspecDir)" />    
+    <UpdatePackageVersion Files="%(TestEasyNuspecDest.FullPath)" PackageVersion="$(NewPackageVersion)"/>           
+  </Target>
+  
+  <Target Name="RunUnitTests">
+    <xunit Assembly="%(TestProjects.FullPath)" Xml="$(TestResultsPath)\%(TestProjects.Filename).XunitResults.xml" Verbose="true" />
+  </Target>
+
+  <Target Name="CreateOutputDir">
+    <MakeDir Directories="$(ArtifactsDir)" Condition="!Exists('$(ArtifactsDir)')" />
+    <MakeDir Directories="$(ArtifactsNuspecDir)" Condition="!Exists('$(ArtifactsNuspecDir)')" />
+    <MakeDir Directories="$(TestResultsPath)" Condition="!Exists('$(TestResultsPath)')" />
+    <MakeDir Directories="$(ArtifactsPackagesDir)" Condition="!Exists('$(ArtifactsPackagesDir)')" />
+    <MakeDir Directories="$(ArtifactsRawDir)" Condition="!Exists('$(ArtifactsRawDir)')" />
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="CreateOutputDir">
+    <MSBuild Projects="$(ProjectRoot)\TestEasy.sln"
+             Targets="Rebuild"
+             Properties="Configuration=$(Configuration)" />
+  </Target>
+
+  <Target Name="Clean">
+    <MSBuild Projects="$(ProjectRoot)\TestEasy.sln"
+             Targets="Clean"
+             Properties="Configuration=$(Configuration)" />
+  </Target>
+  
+  <Target Name="BuildPackages" DependsOnTargets="CreateOutputDir">
+    <ItemGroup>      
+      <TestEasyCorePackage Include="$(ArtifactsNuspecDir)\TestEasy.Core.nuspec" />
+      <TestEasyNuGetPackage Include="$(ArtifactsNuspecDir)\TestEasy.NuGet.nuspec" />
+      <TestEasyAzurePackage Include="$(ArtifactsNuspecDir)\TestEasy.Azure.nuspec" />
+      <TestEasyFullPackage Include="$(ArtifactsNuspecDir)\TestEasy.Full.nuspec" />
+      <TestEasyWebBrowserPackage Include="$(ArtifactsNuspecDir)\TestEasy.WebBrowser.nuspec" />
+      <TestEasyWebServerPackage Include="$(ArtifactsNuspecDir)\TestEasy.WebServer.nuspec" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <TestEasyCore Include="$(ProjectRoot)\src\TestEasy.Core\bin\$(Configuration)\TestEasy.Core.*" />
+      <TestEasyNuGet Include="$(ProjectRoot)\src\TestEasy.NuGet\bin\$(Configuration)\TestEasy.NuGet.*" />
+      <TestEasyAzure Include="$(ProjectRoot)\src\TestEasy.Azure\bin\$(Configuration)\TestEasy.Azure.*" />
+      <TestEasyFull Include="$(ProjectRoot)\src\TestEasy.Web\bin\$(Configuration)\TestEasy.Full.*" />
+      <TestEasyWebBrowser Include="$(ProjectRoot)\src\TestEasy.WebBrowser\bin\$(Configuration)\TestEasy.WebBrowser.*" />
+      <TestEasyWebServer Include="$(ProjectRoot)\src\TestEasy.WebServer\bin\$(Configuration)\TestEasy.WebServer.*" />
+    </ItemGroup>
+
+    <!-- Copy assemblis with current Configuration to raw folder -->
+    <Copy SourceFiles="%(TestEasyCore.Identity)" DestinationFolder="$(ArtifactsRawDir)" />
+    <Copy SourceFiles="%(TestEasyNuGet.Identity)" DestinationFolder="$(ArtifactsRawDir)" />
+    <Copy SourceFiles="%(TestEasyAzure.Identity)" DestinationFolder="$(ArtifactsRawDir)" />
+    <Copy SourceFiles="%(TestEasyFull.Identity)" DestinationFolder="$(ArtifactsRawDir)" />
+    <Copy SourceFiles="%(TestEasyWebBrowser.Identity)" DestinationFolder="$(ArtifactsRawDir)" />
+    <Copy SourceFiles="%(TestEasyWebServer.Identity)" DestinationFolder="$(ArtifactsRawDir)" />
+
+    <!-- Now generate packages -->
+    <Exec Command="&quot;$(NuGetExePath)&quot; pack &quot;%(TestEasyAzurePackage.Identity)&quot; -o &quot;$(ArtifactsPackagesDir)&quot; -symbols"
+            LogStandardErrorAsError="true" />    
+    <Exec Command="&quot;$(NuGetExePath)&quot; pack &quot;%(TestEasyCorePackage.Identity)&quot; -o &quot;$(ArtifactsPackagesDir)&quot; -symbols"
+            LogStandardErrorAsError="true" />
+    <Exec Command="&quot;$(NuGetExePath)&quot; pack &quot;%(TestEasyFullPackage.Identity)&quot; -o &quot;$(ArtifactsPackagesDir)&quot;"
+            LogStandardErrorAsError="true" />
+    <Exec Command="&quot;$(NuGetExePath)&quot; pack &quot;%(TestEasyNuGetPackage.Identity)&quot; -o &quot;$(ArtifactsPackagesDir)&quot; -symbols"
+            LogStandardErrorAsError="true" />
+    <Exec Command="&quot;$(NuGetExePath)&quot; pack &quot;%(TestEasyWebBrowserPackage.Identity)&quot; -o &quot;$(ArtifactsPackagesDir)&quot; -symbols"
+            LogStandardErrorAsError="true" />
+    <Exec Command="&quot;$(NuGetExePath)&quot; pack &quot;%(TestEasyWebServerPackage.Identity)&quot; -o &quot;$(ArtifactsPackagesDir)&quot; -symbols"
+            LogStandardErrorAsError="true" />
+  </Target>
+ 
+  <UsingTask TaskName="UpdatePackageVersion" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <Files ParameterType="System.String[]" Required="true" />
+      <PackageVersion ParameterType="System.String" Required="true" />      
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System.IO" />
+      <Using Namespace="System.Collections.Generic" />
+      <Using Namespace="System" />
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+            string originalVersion = "[version]";         
+            string currentVersionString = PackageVersion;
+
+            foreach (var fileName in Files)
+            {
+                if (!File.Exists(fileName))
+                {
+                    throw new Exception(string.Format("File '{0}' was not found. Version replacement failed.", fileName));
+                }
+
+                FileInfo fi = new FileInfo(fileName);
+                fi.Attributes = FileAttributes.Normal;
+
+                string fileContent = File.ReadAllText(fileName);
+                File.WriteAllText(fileName, fileContent.Replace(originalVersion, currentVersionString));
+            }            
+          ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+</Project>
