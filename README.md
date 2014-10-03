@@ -85,7 +85,7 @@ You had to do it only once and now TestEasy APIs from any machine should be able
 
 In order to run TestEasy tests (Bvts or samples) on your dev/test/ci machine you need to do this last step. Assuming that you completed steps above, create an environment variable on your Dev/Test/CI machine 
 
-	**TestEasySupportPath**=[PATH] 
+	TestEasySupportPath=[PATH] 
 	
 and set its value to the path of your shared folder that you prepared earlier. For dynamically created test machines you may want to create a script that will create this environment variable for you after machine is reimaged
 
