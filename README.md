@@ -3,7 +3,7 @@ TestEasy
 
 ### Overview
 
-TestEasy is a set of packages that are designed to help automated tests (and not only) to manage various resources like web sites, web servers, Azure Resources, nuget packages, browsers etc. At this moment there are following packages (assemblies):
+TestEasy is a set of packages that are designed to help automated tests (and not only) to manage various resources like web sites, web servers, Azure Resources, nuget packages, browsers etc. At this moment there are the following packages (assemblies):
 
 -	**TestEasy.Core**: contains configuration logic, abstractions and helpers that other TestEasy packages depend on.
 -	**TestEasy.WebServer**: contains helper classes that enable an easy way to execute basic operations for IIS and IISExpress )however can be extended to add support for other webservers)
